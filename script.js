@@ -13,11 +13,11 @@ function formatDate(dateStr){
 
 function formatDateLong(dateStr){
     if(!dateStr) return '';
-    const date = new Date(dateStr  +  'T00:00:00');
+    const [y, m, d] = dateStr.split('-');
+    const date = new Date(y, m - 1, d); // month is 0-indexed
     return date.toLocaleDateString('en-ZA',{
-        weekday: 'long',day: 'numeric',month: 'long', year: 'numeric'
+        weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
     });
-
 }
 
  function escapeHtml(str) {
