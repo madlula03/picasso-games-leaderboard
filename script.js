@@ -1,9 +1,14 @@
 const STORAGE_KEY = 'leaderboard_players';
 const DATE_KEY = 'leaderboard_date';
 
- function getTodayDate() {
-    return new Date().toISOString().split('T')[0]; // '2026-06-10'
-  }
+function getTodayDate() {
+    const now = new Date();
+    const y = now.getFullYear();
+    const m = String(now.getMonth() + 1).padStart(2, '0');
+    const d = String(now.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+}
+
 
 function formatDate(dateStr){
     if(!dateStr) return '-';
