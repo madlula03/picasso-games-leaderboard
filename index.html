@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"  href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Picasso Games <span>Leaderboard</span></h1>
+        <p id="header-date">Loading...</p> 
+    </header>
+
+    <div class="card">
+        <div class="reset-bannet" id="reset_banner">
+             A bew day has started - all scores have been reset to 0!!
+        </div>
+
+        <div class="form-section">
+            <h2>Add player</h2>
+            <div class="form-row">
+                <input type="text" id ="input-name" placeholder="Player Name" maxlength="30" autocomplete="off">
+                <input  type="number" id="input-score" placeholder="Score" min="0" max="9999999">
+                <button class="btn-add" onclick="addPlayer()" title="Add player">+</button>
+            </div>
+            <p class="error-msg" id="error-msg"></p>
+
+        </div>
+
+        <div class="list-header">
+            <h2>Rankings</h2>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span class="today-label" id="today_label"></span>
+                <span class="count-badge" id="count-badge">0 players</span>
+            </div>
+        </div>
+        <ul id="player-list"></ul>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
